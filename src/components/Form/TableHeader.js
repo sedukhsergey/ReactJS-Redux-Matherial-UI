@@ -2,7 +2,6 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography'
 
 const TableHeader = props =>
-	<thead>
 		<tr>
 			<th>
 				<Typography variant='title'>
@@ -11,7 +10,12 @@ const TableHeader = props =>
 			</th>
 			<th>
 				<Typography variant='title'>
-					Delete
+					Event Field
+				</Typography>
+			</th>
+			<th>
+				<Typography variant='title'>
+					Event
 				</Typography>
 			</th>
 			<th>
@@ -19,7 +23,11 @@ const TableHeader = props =>
 					Created at
 				</Typography>
 			</th>
+			<th>
+				<Typography variant='title'>
+					Delete item
+				</Typography>
+			</th>
 		</tr>
-	</thead>
 
 	export default TableHeader

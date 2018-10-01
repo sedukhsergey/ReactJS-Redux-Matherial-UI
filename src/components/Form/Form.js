@@ -9,16 +9,20 @@ const styles = theme => ({
 		margin: '0 auto',
 		fontFamily: 'Roboto',
 		boxShadow: theme.spacing.unit * 4,
+	},
+	paper: {
+		margin: '10px auto 15px auto',
+		padding: '10px',
+		maxWidth: '800px'
 	}
 })
 
 const Form = props => {
-	console.log('Form',props)
 	const {classes} = props
 	return (
 	<Fragment>
-		<Paper>
-			<Grid item xs={8} className={classes.container}>
+		<Paper className={classes.paper}>
+			<Grid item xs={12} className={classes.container}>
 				<DataList 
 					list={props.list}
 					listNumber={props.listNumber}

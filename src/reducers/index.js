@@ -19,6 +19,7 @@ const changeListReducer = (
 	list=[{
 		id: 1,
 		createdAt: new Date(),
+		event: '',
 	}], action) => {
 	switch(action.type) {
 		case CHANGE_LIST:

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles'
+import PropTypes from 'prop-types'
 
 const styles = {
 	contact: {
@@ -49,18 +50,24 @@ const styles = {
 }
 
 const SearchContactList = props =>{
-	const { classes } = props
-	const handleClick = (event) => {
-		props.showContact( props.id)
-		props.clearDisplayContacts()
+
+	const showContact = event => {
+		const oldItems = props.contactsList.slice();
+		const newItem = oldItems.filter(item =>
+			item.id === props.id )
+		props.selectUserDispatch(newItem)
+		props.displayContactsDispatch([])
 	}
+
+	const { classes } = props
+
 	return(
 		<li 
-			onClick={handleClick}
+			onClick={showContact}
 			key={props.id}
 			className={classes.contact}>
 			<img className={classes.contact_image} src={props.contacts.photo} alt=""/>
-			<div className={classes.contact_info}>
+			<div className={classes.contac_info}>
 				<div>
 					{props.contacts.name}
 				</div>
@@ -70,5 +77,10 @@ const SearchContactList = props =>{
 			</div>
 		</li>
 	)
+}
+
+SearchContactList.propTypes = {
+	selectUserDispatch: PropTypes.func.isRequired,
+	displayContactsDispatch: PropTypes.func.isRequired,
 }
 export default withStyles(styles)(SearchContactList);
