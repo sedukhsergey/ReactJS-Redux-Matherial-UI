@@ -1,13 +1,23 @@
-import {createStore, combineReducers} from 'redux'
-import selectUserReducer from '../reducers/selectUserReducer'
-import changeListNumberReducer from '../reducers/changeListNumberReducer'
-import changeListReducer from '../reducers/changeListReducer'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import { createLogger } from 'redux-logger'
+import thunk from 'redux-thunk'
+import { 
+	selectUserReducer,
+	changeListReducer,
+	changeListNumberReducer,
+	contactReducer,
+	displayContactsReducer,
+} from '../reducers/'
+
 const store = createStore (
 	combineReducers({
 		user: selectUserReducer,
+		contacts: contactReducer,
+		displayContacts: displayContactsReducer,
 		listNumber: changeListNumberReducer,
 		list: changeListReducer,
-	})
+	}),
+	applyMiddleware(thunk, createLogger())
 	)
 
 store.subscribe(() => 

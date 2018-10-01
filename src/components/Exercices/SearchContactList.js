@@ -48,7 +48,6 @@ const styles = {
 	}
 }
 
-
 const SearchContactList = props =>{
 	const { classes } = props
 	const handleClick = (event) => {

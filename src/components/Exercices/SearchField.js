@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import SearchContactList from './SearchContactList'
+import React from 'react';
+import { SearchContactList } from './'
 import PropTypes from 'prop-types'
 import  { Paper, Typography, withStyles } from '@material-ui/core/'
 
@@ -37,128 +37,98 @@ const styles = theme => ({
 });
 
 
-class ContactList extends Component {
-	
-	static propTypes = {
-	user: PropTypes.array.isRequired,
-	selectUserDispatch: PropTypes.func.isRequired,
-	}
+const SearchField = props => {
 
-	state = {
-		contacts: [],
-		displayContacts: [],
-	}
-
-	componentDidMount() { 
-		this.fetchInitData()
-		.then(users => (
-			this.setState ({
-				contacts: users
-			}))
-		);
-	}
-
-	fetchInitData() {
-		return fetch( 'https://randomuser.me/api/?results=100' )
-		.then( results => results.json() )
-		.then( data => {
-			return data.results.map( elem => {
-				return {
-					photo: elem.picture.large,
-					id: elem.login.uuid,
-					phone: elem.phone,
-					name: `${ elem.name.first } ${ elem.name.last }`,
-					email: elem.email,
-				}
-			} )
-		});
-	}
-
-	handleSearchContact = (e) => {
+	const handleSearchContact = (e) => {
 		let searchQuery = e.target.value.toLowerCase();
 		searchQuery = searchQuery === '' ? '1' : searchQuery;
-		let displayedContacts = this.state.contacts.filter( el => {
+		let displayedContacts = props.contacts.filter( el => {
 			let searchValue = el.name.toLowerCase();
 			return searchValue.indexOf(searchQuery) !== -1;
 		});
-		this.setState({
-			displayContacts: displayedContacts,
-		});
+		props.displayContactsDispatch(displayedContacts)
 	}
 
-	showContact = (ItemId) => {
-		const oldItems = this.state.contacts.slice();
+	const showContact = (ItemId) => {
+		const oldItems = props.contacts.slice();
 		const newItem = oldItems.filter(item =>
 			item.id === ItemId )
-		this.props.selectUserDispatch(newItem)
+		props.selectUserDispatch(newItem)
 	}
 
-	clearDisplayContacts = (event) => {
-	this.setState({
-		displayContacts: []
-	})
+	const clearDisplayContacts = (event) => {
+		props.displayContactsDispatch([])
 	}
 	
-	clearInputField = (event) => {
-		event.target.value = ''
+	const clearInputField = (event) => {
+	 event.target.value = ''
 	}
 
-	renderContactsList = () =>
-		this.state.displayContacts.map(
-			( item, index ) => 
-				<SearchContactList
-					contacts={item}
-					key={item.id}
-					showContact={this.showContact}
-					clearDisplayContacts={this.clearDisplayContacts}
-					id={item.id}
-				/>)
+	const getContacts = () =>
+		props.getContactsDispatch()
 
-	renderUserContainer = () =>
-		this.props.user.map(item =>
+	const renderContactsList = () =>
+		props.displayContacts.map( item => 
+			<SearchContactList
+				contacts={item}
+				key={item.id}
+				showContact={showContact}
+				clearDisplayContacts={clearDisplayContacts}
+				id={item.id}/>)
+
+	const renderUserContainer = () =>
+		props.user.map(item =>
 			<Paper 
 				style={{
 					padding: '15px', 
 				}}
-				elevation={1}>
-					<Typography 
-						style={{textTransform: 'capitalize'}}
-						variant="title">
-						{item.name}
-					</Typography>
-					<Typography 
-						variant="subheading">
-						Phone: {item.phone}
-					</Typography>
-					<Typography 
-						variant="subheading">
-						Email: {item.email}
-					</Typography>
+				elevation={1}
+				key={item.id}>
+				<Typography 
+					style={{textTransform: 'capitalize'}}
+					variant="title">
+					{item.name}
+				</Typography>
+				<Typography 
+					variant="subheading">
+					Phone: {item.phone}
+				</Typography>
+				<Typography 
+					variant="subheading">
+					Email: {item.email}
+				</Typography>
 			</Paper>
 		)
 
-	render() {
-		const { classes } = this.props
+	const { classes } = props
 		return (
 			<div className={classes.contacts_container}>
-				<input className={classes.search_field}
-							 type="text" 
-							 onChange={
-							 this.handleSearchContact}
-							 onBlur={this.clearInputField}
-							/>
+				<input 
+					className={classes.search_field}
+					type="text" 
+					onChange={
+					handleSearchContact}
+					onBlur={clearInputField}
+					onFocus={getContacts}/>
 				<div className={classes.container_ul}>
 					<ul className={classes.contact_ul}>
-								{this.renderContactsList()}
+						{renderContactsList()}
 					</ul>
 				</div>
 				<div>
-					{this.renderUserContainer()}
+					{renderUserContainer()}
 				</div>
 			</div>
 			)
+}
 
+SearchField.propTypes = {
+	user: PropTypes.array.isRequired,
+	selectUserDispatch: PropTypes.func.isRequired,
+	getContactsDispatch: PropTypes.func.isRequired,
+	contacts: PropTypes.array.isRequired,
+	displayContacts: PropTypes.array.isRequired,
+	displayContactsDispatch: PropTypes.func.isRequired,
 	}
 
-}
-export default withStyles(styles)(ContactList);
+export default withStyles(styles)(SearchField);

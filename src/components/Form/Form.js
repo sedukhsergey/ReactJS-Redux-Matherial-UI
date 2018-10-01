@@ -1,23 +1,42 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Grid, Paper } from '@material-ui/core/'
+import { withStyles } from '@material-ui/core/styles'
+import { DataList } from './'
+import PropTypes from 'prop-types'
+
+const styles = theme => ({
+	container: {
+		margin: '0 auto',
+		fontFamily: 'Roboto',
+		boxShadow: theme.spacing.unit * 4,
+	}
+})
 
 const Form = props => {
-	const users = ['Vasya','Petya','Maksim','Egor']
-	const getKey = str => {
-		let key = 0;
-		for (let i = 0; i < str.length; i++) {
-			key += str.charCodeAt(i);
-		}
-		return key
-	}
-	const items = users.map(user => <li key={getKey(user)}>{user}</li>);
+	console.log('Form',props)
+	const {classes} = props
 	return (
-		<form>
-			<ul>
-				{items}
-			</ul>
-		</form>
+	<Fragment>
+		<Paper>
+			<Grid item xs={8} className={classes.container}>
+				<DataList 
+					list={props.list}
+					listNumber={props.listNumber}
+					changeListDispatch={props.changeListDispatch}
+					changeNumberListDispatch={props.changeNumberListDispatch}/>
+			</Grid>
+		</Paper>
+	</Fragment> 
 		)
+	
 }
-		
+	
 
-	export default Form
+Form.propTypes = {
+	changeNumberListDispatch: PropTypes.func.isRequired,
+	listNumber: PropTypes.number.isRequired,
+	list: PropTypes.array.isRequired,
+	changeListDispatch: PropTypes.func.isRequired,
+}
+
+	export default withStyles(styles)(Form)

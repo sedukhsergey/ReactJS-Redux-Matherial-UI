@@ -1,38 +1,42 @@
-import React, { Component, Fragment} from 'react';
+import React, { Fragment} from 'react';
 import { connect } from 'react-redux'
-import  { selectUserAction } from '../actions/selectUserAction'
-import { changeNumberListAction } from '../actions/changeNumberListAction'
-import { changeListAction } from '../actions/changeListAction'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Exercices from '../components/Exercices/Exercices'
 import Form from '../components/Form/Form'
+import {
+	selectUserAction,
+	changeNumberListAction,
+	changeListAction,
+	displayContactsAction,
+	getContacts
+} from '../actions/'
 
-class App extends Component {
-	render() {
-		console.log('App',this.props)
-		return (
-			<Fragment>
-				<Header/>
-				<Exercices 
-					user={this.props.user}
-					selectUserDispatch={this.props.selectUserDispatch}
-					changeNumberListDispatch={this.props.changeNumberListDispatch}
-					listNumber={this.props.listNumber}
-					list={this.props.list}
-					changeListDispatch={this.props.changeListDispatch}/>
-					<Form />
-				<Footer />
-			</Fragment>
-			)
-	}
-}
+const App = props =>
+	<Fragment>
+		<Header/>
+		<Exercices 
+			user={props.user}
+			selectUserDispatch={props.selectUserDispatch}
+			getContactsDispatch={props.getContactsDispatch}
+			contacts={props.contacts}
+			displayContacts={props.displayContacts}
+			displayContactsDispatch={props.displayContactsDispatch}/>
+		<Form 
+			changeNumberListDispatch={props.changeNumberListDispatch}
+			listNumber={props.listNumber}
+			list={props.list}
+			changeListDispatch={props.changeListDispatch}/>
+		<Footer />
+	</Fragment>
 
 const mapStateToProps = store => {
 	return {
 		user: store.user,
 		listNumber: store.listNumber,
 		list: store.list,
+		contacts: store.contacts,
+		displayContacts: store.displayContacts,
 	}
 }
 
@@ -48,6 +52,13 @@ const mapDispatchToProps = dispatch => ({
 	changeListDispatch(obj) {
 		const changeList = changeListAction(obj);
 		dispatch(changeList)
+	},
+	getContactsDispatch() {
+		dispatch(getContacts())
+	},
+	displayContactsDispatch(contacts) {
+		const displayContacts = displayContactsAction(contacts)
+		dispatch(displayContacts)
 	}
 
 })
