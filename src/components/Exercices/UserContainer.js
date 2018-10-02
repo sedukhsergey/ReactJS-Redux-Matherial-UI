@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import  { Paper, Typography, withStyles, Card, CardContent } from '@material-ui/core/'
+import  { Typography, withStyles, Card, CardContent } from '@material-ui/core/'
 
 const styles = {
 	card: {
-		minWidth: 275,
+		maxWidth: 275,
+
 	},
 	title: {
 		marginBottom: 16,
-		fontSize: 14,
 	},
 }
 
@@ -18,7 +18,7 @@ const UserContainer = props => {
 		props.user.map(item =>
 		<Card className={classes.card}>
 			<CardContent>
-				<Typography className={classes.title} color="textSecondary">
+				<Typography className={classes.title} color="textSecondary" variant='headline'>
 					{item.name}
 				</Typography>
 				<Typography component="p">
