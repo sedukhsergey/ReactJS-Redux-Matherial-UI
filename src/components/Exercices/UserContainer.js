@@ -1,37 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import  { Paper, Typography, withStyles } from '@material-ui/core/'
+import  { Paper, Typography, withStyles, Card, CardContent } from '@material-ui/core/'
 
 const styles = {
-
+	card: {
+		minWidth: 275,
+	},
+	title: {
+		marginBottom: 16,
+		fontSize: 14,
+	},
 }
 
-const UserContainer = props =>
-	props.user.map(item =>
-		<Paper 
-			style={{
-				padding: '15px', 
-			}}
-			elevation={1}
-			key={item.id}>
-			<Typography 
-				style={{textTransform: 'capitalize'}}
-				variant="title">
-				{item.name}
-			</Typography>
-			<Typography 
-				variant="subheading">
-				Phone: {item.phone}
-			</Typography>
-			<Typography 
-				variant="subheading">
-				Email: {item.email}
-			</Typography>
-		</Paper>
+const UserContainer = props => {
+	const { classes } = props
+	return (
+		props.user.map(item =>
+		<Card className={classes.card}>
+			<CardContent>
+				<Typography className={classes.title} color="textSecondary">
+					{item.name}
+				</Typography>
+				<Typography component="p">
+					Phone: {item.phone}
+				</Typography>
+				<Typography component="p">
+					Email: {item.email}
+				</Typography>
+			</CardContent>
+		</Card>
+		
 		)
+	)
+}
+	
 
 	UserContainer.propTypes = {
 		user: PropTypes.array.isRequired,
+		classes: PropTypes.object.isRequired,
 	}
 
 
