@@ -55,12 +55,12 @@ const SearchContactList = props =>{
 		const oldItems = props.contactsList.slice();
 		const newItem = oldItems.filter(item =>
 			item.id === props.id )
-		props.selectUserDispatch(newItem)
+		props.selectUserDispatch(...newItem)
 		props.displayContactsDispatch([])
+console.log('SearchContactList', )
 	}
 
 	const { classes } = props
-
 	return(
 		<li 
 			onClick={showContact}

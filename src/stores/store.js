@@ -1,5 +1,4 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
-import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import { 
 	selectUserReducer,
@@ -17,10 +16,8 @@ const store = createStore (
 		listNumber: changeListNumberReducer,
 		list: changeListReducer,
 	}),
-	applyMiddleware(thunk, createLogger())
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	applyMiddleware(thunk)
 	)
-
-store.subscribe(() => 
-	console.log('myStore', store.getState()))
 
 export default store;

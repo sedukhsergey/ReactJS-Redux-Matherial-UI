@@ -14,29 +14,26 @@ const styles = {
 
 const UserContainer = props => {
 	const { classes } = props
-	return (
-		props.user.map(item =>
+	return props.user.name && props.user.phone && props.user.email ? (
 		<Card className={classes.card}>
 			<CardContent>
 				<Typography className={classes.title} color="textSecondary" variant='headline'>
-					{item.name}
+					{props.user.name}
 				</Typography>
 				<Typography component="p">
-					Phone: {item.phone}
+					Phone: {props.user.phone}
 				</Typography>
 				<Typography component="p">
-					Email: {item.email}
+					Email: {props.user.email}
 				</Typography>
 			</CardContent>
 		</Card>
-		
-		)
-	)
+	) : null
 }
 	
 
 	UserContainer.propTypes = {
-		user: PropTypes.array.isRequired,
+		user: PropTypes.object.isRequired,
 		classes: PropTypes.object.isRequired,
 	}
 

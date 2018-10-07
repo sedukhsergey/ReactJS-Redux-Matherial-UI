@@ -19,7 +19,7 @@ const Exercices = props =>
 	</Grid>
 
 Exercices.propTypes = {
-	user: PropTypes.array.isRequired,
+	user: PropTypes.object.isRequired,
 	selectUserDispatch: PropTypes.func.isRequired,
 	getContactsDispatch: PropTypes.func.isRequired,
 	contacts: PropTypes.array.isRequired,

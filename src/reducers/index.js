@@ -46,12 +46,12 @@ const displayContactsReducer = (displayContacts = [], action) => {
 	}
 }
 
-const selectUserReducer = (initialArray = [], action ) => {
+const selectUserReducer = (user = {}, action ) => {
 	switch(action.type) {
 		case SELECT_USER:
-			return initialArray = action.payload
+			return {...action.payload}
 		default:
-			return initialArray
+			return user
 	}
 }
 

@@ -1,9 +1,11 @@
-import React, { Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
-import Header from '../components/Header/Header'
+import { Switch, Route } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
 import Exercices from '../components/Exercices/Exercices'
-import Form from '../components/Form/Form'
+import EventList from '../components/EventList/EventList'
+import Main from '../components/Main/Main'
+import Header from '../components/Header/Header'
 import {
 	selectUserAction,
 	changeNumberListAction,
@@ -15,20 +17,28 @@ import {
 const App = props =>
 	<Fragment>
 		<Header/>
-		<Exercices 
-			user={props.user}
-			selectUserDispatch={props.selectUserDispatch}
-			getContactsDispatch={props.getContactsDispatch}
-			contacts={props.contacts}
-			displayContacts={props.displayContacts}
-			displayContactsDispatch={props.displayContactsDispatch}/>
-		<Form 
-			changeNumberListDispatch={props.changeNumberListDispatch}
-			listNumber={props.listNumber}
-			list={props.list}
-			changeListDispatch={props.changeListDispatch}/>
+		<Switch>
+			<Route exact path='/' component={Main}/>
+			<Route path='/exercices' render={() => (
+				<Exercices 
+					user={props.user}
+					selectUserDispatch={props.selectUserDispatch}
+					getContactsDispatch={props.getContactsDispatch}
+					contacts={props.contacts}
+					displayContacts={props.displayContacts}
+					displayContactsDispatch={props.displayContactsDispatch} />
+				)}/>
+			<Route path='/event_list' render={() => (
+				<EventList 
+				changeNumberListDispatch={props.changeNumberListDispatch}
+				listNumber={props.listNumber}
+				list={props.list}
+				changeListDispatch={props.changeListDispatch}/>
+			)}/>
+		</Switch>
 		<Footer />
 	</Fragment>
+	
 
 const mapStateToProps = store => {
 	return {

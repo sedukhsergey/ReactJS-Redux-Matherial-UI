@@ -17,30 +17,28 @@ const styles = theme => ({
 	}
 })
 
-const Form = props => {
+const EventList = props => {
 	const {classes} = props
 	return (
-	<Fragment>
-		<Paper className={classes.paper}>
-			<Grid item xs={12} className={classes.container}>
-				<DataList 
-					list={props.list}
-					listNumber={props.listNumber}
-					changeListDispatch={props.changeListDispatch}
-					changeNumberListDispatch={props.changeNumberListDispatch}/>
-			</Grid>
-		</Paper>
-	</Fragment> 
+		<Fragment>
+			<Paper className={classes.paper}>
+				<Grid item xs={12} className={classes.container}>
+					<DataList 
+						list={props.list}
+						listNumber={props.listNumber}
+						changeListDispatch={props.changeListDispatch}
+						changeNumberListDispatch={props.changeNumberListDispatch}/>
+				</Grid>
+			</Paper>
+		</Fragment> 
 		)
-	
 }
-	
 
-Form.propTypes = {
+EventList.propTypes = {
 	changeNumberListDispatch: PropTypes.func.isRequired,
 	listNumber: PropTypes.number.isRequired,
 	list: PropTypes.array.isRequired,
 	changeListDispatch: PropTypes.func.isRequired,
 }
 
-	export default withStyles(styles)(Form)
+	export default withStyles(styles)(EventList)
