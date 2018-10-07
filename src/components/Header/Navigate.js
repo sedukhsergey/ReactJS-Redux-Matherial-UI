@@ -5,13 +5,15 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 const styles = {
-	root: {
-		textDecoration: 'none',
-		width: '100%',
-    height: '40px',
-	},
 	link: {
-		position: 'absolute ',
+		textAlign: 'center',
+		textDecoration: 'none',
+    height: '40px',
+    marginRight: '-15px',
+   	marginLeft: '-16px',
+    minWidth: '100px',
+    height: '40px',
+    padding: '12px 10px',
 	},
 	menuButton: {
 		marginLeft: -18,
@@ -38,17 +40,17 @@ const Navigate = props =>{
 					<MenuItem onClick={props.handleCloseMenu}>
 						<Link 
 							to='/' 
-							className={classes.root}>Home</Link>
+							className={classes.link}>Home</Link>
 					</MenuItem>
 					<MenuItem onClick={props.handleCloseMenu}>
 						<Link 
 							to='/exercices' 
-							className={classes.root}>Exercices</Link>
+							className={classes.link}>Exercices</Link>
 					</MenuItem>
 					<MenuItem onClick={props.handleCloseMenu}>
 						<Link 
 							to='/event_list'
-							className={classes.root}>EventList</Link>
+							className={classes.link}>EventList</Link>
 					</MenuItem>
 			</Menu>
 		</Fragment>

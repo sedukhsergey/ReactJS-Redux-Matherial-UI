@@ -1,8 +1,44 @@
-import React from 'react'
-const Main = props => 
-	<div>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto cupiditate, aperiam illum sapiente. Fugiat, explicabo, vel hic laborum nisi ratione ut molestiae reiciendis libero tenetur veritatis quam, provident consequatur alias.
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste totam ducimus, in labore illum nam eligendi asperiores veritatis natus. Necessitatibus animi illo sed sapiente minima. Modi eaque, nisi. Error, doloremque. Facilis unde delectus quo, omnis numquam? Eveniet magni voluptates dolores molestiae laudantium corporis cum voluptatem ducimus debitis, in incidunt soluta asperiores quaerat beatae cumque placeat officia ut at? Consequuntur perferendis, consequatur labore provident incidunt repellat temporibus eligendi nostrum, quasi voluptas quia eveniet. Consequuntur inventore non alias ipsum porro totam praesentium voluptatum mollitia eligendi quod quo nam voluptas, obcaecati voluptatibus necessitatibus laudantium et quis, optio sit, deleniti vitae ea deserunt sed. Dolore repellat dolor aperiam saepe! Reprehenderit porro, eaque nesciunt, ab harum mollitia sapiente officia nemo consequatur quidem animi, ad dolorum, quo rem praesentium! Commodi assumenda a, saepe nam maxime dignissimos officiis nobis, praesentium, tenetur ullam ratione. Error nihil quos, tempore placeat omnis, voluptas neque facere sed quia a, et quas reiciendis consequatur distinctio autem cupiditate alias illum magnam dolorem. Fuga reiciendis a sit amet, quia accusantium modi? Neque commodi, quia optio facilis, aperiam voluptatibus repudiandae, saepe vel incidunt iusto numquam, unde ad earum accusantium! Aspernatur neque libero earum adipisci temporibus blanditiis iusto, praesentium repellat inventore iure facilis eius rem voluptatem, suscipit cum. Illum soluta, assumenda fuga itaque, quisquam pariatur numquam illo voluptates quaerat aliquam tempora voluptatum accusamus consectetur perspiciatis ab delectus sapiente cupiditate similique. Repellendus, laudantium! Quidem obcaecati enim dolorem eveniet itaque quaerat quisquam placeat, quia exercitationem ad neque reiciendis error qui, assumenda quis, non optio, ipsam eligendi ducimus quas vel atque quam corrupti. Pariatur maiores eum sapiente magni, ex alias ut tempore explicabo officiis odit quos voluptate. Repellendus reiciendis, libero odit nobis ratione aspernatur repudiandae alias, necessitatibus molestias eius quas illum, quasi ducimus cupiditate, cum totam pariatur et! Dolorum consequatur expedita ratione iste quisquam quaerat eligendi consectetur tenetur repudiandae, totam? Nesciunt debitis recusandae delectus explicabo ad, vero repellat cumque soluta voluptates, ipsa. Nisi reprehenderit exercitationem architecto qui perspiciatis corporis sint dicta delectus autem. Modi ex eveniet pariatur incidunt. Recusandae repudiandae explicabo et quod magnam voluptatem reprehenderit numquam vero! Quas dolorem accusantium facere cupiditate eaque beatae id consectetur, nisi voluptates, cumque, nesciunt magnam eius. Beatae esse repellat, nisi! Quibusdam ducimus laboriosam aut quo voluptatum, maiores dolorem nobis vero corporis nihil nesciunt porro id exercitationem corrupti veritatis sequi, quasi vitae natus officiis illo. Dolor cupiditate, consectetur asperiores fugit possimus perspiciatis id voluptatem doloribus! Perferendis dolores quaerat, corporis fugiat praesentium omnis vero consequatur voluptate aliquid dignissimos alias error modi voluptatibus, dolore! Repudiandae debitis sit alias sunt. Tenetur quo mollitia culpa quas. Adipisci veritatis aspernatur optio deserunt similique quibusdam! Rerum tempora, non quaerat quibusdam explicabo rem dolores eveniet sapiente libero provident deleniti quae numquam maiores illum fugiat, ut eius facilis amet! Officia architecto rerum quo dolore deleniti, sapiente sint tenetur fugiat earum veritatis? Repellat eos soluta quae hic quam impedit accusamus facere animi fuga omnis officiis suscipit cupiditate iste nemo, consequuntur distinctio mollitia sit possimus cum, laborum quis quod delectus beatae. Quisquam, reiciendis est odio voluptate. Dolorum ipsam perferendis hic iure totam illum incidunt similique quia ducimus accusantium explicabo aut quos sapiente sunt doloribus, tempora reiciendis! Cumque aspernatur quod necessitatibus, fugiat numquam iste dolor qui quisquam, illo consequatur ea nostrum! Neque ipsum esse similique, quidem nam suscipit, libero. Eligendi, a. Voluptatibus, eum inventore doloremque expedita sint, ratione exercitationem tempore doloribus molestias mollitia labore eius perspiciatis officia facilis sit minima quo ex provident. Laboriosam ullam, nemo modi omnis non illum incidunt repellat dolores vero provident adipisci esse explicabo, nesciunt neque nulla tempore corporis accusantium dolor cumque vel dignissimos aut, labore asperiores! Qui pariatur iure voluptas labore facilis illo eveniet repudiandae hic, aliquam facere amet iusto tenetur soluta consectetur quaerat deserunt autem in inventore quis excepturi a eius. Saepe officia accusamus voluptatibus cum, maiores recusandae perspiciatis, in adipisci illo laboriosam commodi sed odit explicabo, repellendus distinctio. Error ab quod nisi vitae aut amet id provident. Qui magnam sapiente natus quos laborum nesciunt optio reprehenderit, ab temporibus commodi libero excepturi deserunt molestiae dolor consequatur sit, aliquam et voluptate tempora numquam assumenda. Magni nulla, qui praesentium repellat commodi voluptates delectus autem exercitationem odit nostrum placeat. Natus aliquid ut maiores earum deserunt itaque libero accusantium quidem aspernatur commodi at suscipit quis voluptas veritatis doloribus minus quos asperiores cum adipisci, dolores animi, ratione labore velit? Nobis, totam, incidunt! Neque quaerat animi, ad error fugit nihil hic assumenda iusto quas quam harum dolorem aliquam. Voluptates dolore minus, fuga blanditiis consectetur non consequatur sunt, voluptate sit aperiam facilis illum ut vel, ducimus quae. Velit architecto maxime fuga quam facilis, id molestiae, hic corporis, quibusdam ad eos quia recusandae. Provident molestiae atque, rerum optio doloremque natus modi magni, necessitatibus assumenda laborum ex tenetur tempora illum aliquid unde exercitationem hic mollitia. Minima ullam aspernatur dolorum, sed quo, dolorem hic accusamus quod. Excepturi impedit delectus nihil, necessitatibus pariatur rerum obcaecati illo totam sequi quisquam aut culpa accusamus ex corrupti ducimus deserunt nesciunt consequuntur dolore autem dignissimos veritatis incidunt quia doloribus quod. Fugit maiores ullam, commodi facere repudiandae itaque odit omnis quae, blanditiis nam, quos voluptatibus obcaecati explicabo unde quia enim vitae voluptate. In earum quasi cumque fugit unde. Facilis quae nobis, tempora molestiae sequi reiciendis quis a ducimus. Mollitia aliquid ipsa veritatis hic, aut quae pariatur magni. Praesentium quidem dolore qui non, perferendis nihil maxime eos enim. Eveniet, provident impedit incidunt laudantium numquam, dignissimos qui iste veritatis praesentium excepturi, ullam quidem minus autem ex, natus rem possimus doloremque ea tempora. Deserunt id, harum quisquam aliquam. Distinctio eligendi laborum fuga numquam non similique hic adipisci eveniet vel? Quod modi, sit voluptatibus atque quisquam, praesentium necessitatibus doloremque nulla quidem ex error a officia magni fugiat non deleniti. Ut commodi possimus voluptatum natus vitae error id magnam obcaecati fugiat, nam, ea ab tempore amet cum ipsum perspiciatis eveniet dolor ad, quaerat quibusdam voluptatibus nesciunt. Debitis unde dolor commodi voluptatum labore minima ipsam ducimus, soluta. Veniam exercitationem molestiae qui amet error velit libero iusto dicta, voluptates laudantium odit debitis corrupti, minus esse unde cumque numquam pariatur asperiores fuga sed vel harum quod. Non distinctio et obcaecati illo earum!
-	</div>
+import React, { Fragment } from 'react'
+import { withStyles, Grid, Paper } from '@material-ui/core'
+import PropTypes from 'prop-types'
 
-export default Main
+const styles = theme => ({
+	root: {
+		flexGrow: 1,
+	},
+	paper: {
+		padding: theme.spacing.unit * 2,
+		textAlign: 'center',
+		width: 200,
+		height: 300,
+	},
+	grid: {
+		marginTop: '20px',
+		marginRight: '50px',
+		marginLeft: "45px",
+	}
+})
+
+const Main = props => {
+	const { classes } = props
+	return(
+		<div className={classes.root}>
+			<Grid 
+				 container
+				direction="row"
+				justify="center"
+				alignItems="center"
+				item xs={12}>
+			{[0,1,2,3,4,5].map( (value, index ) => (
+				<Grid 
+					key={index}
+					item sm={3}
+					className={classes.grid}>
+						<Paper className={classes.paper}/>
+					</Grid>))}
+			</Grid>
+	</div>
+	)
+}
+
+export default withStyles(styles)(Main)
