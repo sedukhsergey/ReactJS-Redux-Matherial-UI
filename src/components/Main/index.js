@@ -1,5 +1,8 @@
 import UploadButton from './UploadButton'
-
+import Items from './Items'
+import ItemCard from './ItemCard'
 export {
-	UploadButton
+	UploadButton,
+	Items,
+	ItemCard,
 }

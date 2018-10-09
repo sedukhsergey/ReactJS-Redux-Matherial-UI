@@ -8,12 +8,11 @@ const styles = {
 	link: {
 		textAlign: 'center',
 		textDecoration: 'none',
-    height: '40px',
-    marginRight: '-15px',
-   	marginLeft: '-16px',
-    minWidth: '100px',
-    height: '40px',
-    padding: '12px 10px',
+		height: '40px',
+		marginRight: '-15px',
+		marginLeft: '-16px',
+		minWidth: '100px',
+		padding: '12px 10px',
 	},
 	menuButton: {
 		marginLeft: -18,
@@ -23,7 +22,6 @@ const styles = {
 
 const Navigate = props =>{
 	const { classes } = props
-	console.log('---',props)
 	return (
 		<Fragment>
 			<IconButton 
