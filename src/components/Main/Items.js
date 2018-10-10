@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Paper, withStyles } from '@material-ui/core'
+import { Grid, withStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import { ItemCard } from './'
 
