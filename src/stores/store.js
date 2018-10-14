@@ -9,7 +9,7 @@ import {
 	displayContactsReducer,
 	getItemsPhotoReducer,
 	displayItemsPhotoReducer,
-	getItemsPhotoReducer2,
+	getNewItemsPhotoInStoreReducer,
 } from '../reducers/'
 
 const store = createStore (
@@ -21,7 +21,7 @@ const store = createStore (
 		list: changeListReducer,
 		itemsPhoto: getItemsPhotoReducer,
 		itemsPhotoDisplay: displayItemsPhotoReducer,
-		newPhotos: getItemsPhotoReducer2,
+		newPhotos: getNewItemsPhotoInStoreReducer,
 	}),
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 	applyMiddleware(logger,thunk)

@@ -14,7 +14,7 @@ import {
 	getContacts,
 	getItemsPhotoAction,
 	displayItemsPhotoAction,
-	getItemsPhotoAction2
+	getNewItemsPhotoInStoreAction
 } from '../actions/'
 
 const App = props =>
@@ -28,7 +28,7 @@ const App = props =>
 					itemsPhotoDisplay={props.itemsPhotoDisplay}
 					displayItemsPhotoDispatch={props.displayItemsPhotoDispatch}
 					newPhotos={props.newPhotos}
-					getItemsPhotoNewDispatch={props.getItemsPhotoNewDispatch}
+					getNewItemsPhotoInStoreDispatch={props.getNewItemsPhotoInStoreDispatch}
 					/>
 				)}/>
 			<Route path='/exercices' render={() => (
@@ -88,8 +88,8 @@ const mapDispatchToProps = dispatch => ({
 	getItemsPhotoDispatch() {
 		dispatch(getItemsPhotoAction())
 	},
-	getItemsPhotoNewDispatch() {
-		dispatch(getItemsPhotoAction2())
+	getNewItemsPhotoInStoreDispatch() {
+		dispatch(getNewItemsPhotoInStoreAction())
 	},
 	displayItemsPhotoDispatch(items) {
 	const displayItemsPhoto = 

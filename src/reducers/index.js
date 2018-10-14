@@ -4,9 +4,9 @@ import {
 	CHANGE_LIST,
 	GET_CONTACTS,
 	DISPLAY_CONTACTS,
-	GET_ITEM_PHOTO,
+	GET_ITEMS_PHOTO,
 	DISPLAY_ITEMS_PHOTO,
-	GET_ITEM_PHOTO2,
+	GET_NEW_ITEMS_PHOTO_IN_STORE,
 } from '../constants/'
 
 const changeListNumberReducer = (stateCounter = 1, action) => {
@@ -35,8 +35,8 @@ const changeListReducer = (
 
 const getItemsPhotoReducer = (items = [], action) => {
 	switch(action.type) {
-		case GET_ITEM_PHOTO:
-			return [...items, action.payload]
+		case GET_ITEMS_PHOTO:
+			return [...action.payload]
 		default: 
 			return items
 	}
@@ -45,17 +45,16 @@ const getItemsPhotoReducer = (items = [], action) => {
 const displayItemsPhotoReducer = (items = [], action) => {
 	switch(action.type) {
 		case DISPLAY_ITEMS_PHOTO:
-		const array=[];
-				return [ ...items ] = array.concat(action.payload)
+				return [...items, ...action.payload ]
 		default:
 			return items
 	}
 }
 
-const getItemsPhotoReducer2 = (items = [], action) => {
+const getNewItemsPhotoInStoreReducer = (items = [], action) => {
 	switch(action.type) {
-		case GET_ITEM_PHOTO2:
-			return [...items, action.payload]
+		case GET_NEW_ITEMS_PHOTO_IN_STORE:
+			return [ ...action.payload]
 		default:
 			return items
 	}
@@ -95,5 +94,5 @@ export {
 	selectUserReducer,
 	getItemsPhotoReducer,
 	displayItemsPhotoReducer,
-	getItemsPhotoReducer2,
+	getNewItemsPhotoInStoreReducer,
 }

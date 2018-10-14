@@ -13,10 +13,9 @@ const styles = theme => ({
 const UploadButton = props => {
 	const handleClick = () => {
 		props.displayItemsPhotoDispatch(props.newPhotos)
-		props.getItemsPhotoNewDispatch()
+		props.getNewItemsPhotoInStoreDispatch()
 	}
 	const { classes } = props
-	console.log('UploadButton',props)
 	return (
 		<Grid
 			container
@@ -35,7 +34,7 @@ const UploadButton = props => {
 
 UploadButton.propTypes = {
 	classes: PropTypes.object.isRequired,
-	getItemsPhotoNewDispatch: PropTypes.func.isRequired,
+	getNewItemsPhotoInStoreDispatch: PropTypes.func.isRequired,
 	displayItemsPhotoDispatch: PropTypes.func.isRequired,
 	newPhotos: PropTypes.array.isRequired,
 }
