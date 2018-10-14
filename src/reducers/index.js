@@ -4,6 +4,9 @@ import {
 	CHANGE_LIST,
 	GET_CONTACTS,
 	DISPLAY_CONTACTS,
+	GET_ITEM_PHOTO,
+	DISPLAY_ITEMS_PHOTO,
+	GET_ITEM_PHOTO2,
 } from '../constants/'
 
 const changeListNumberReducer = (stateCounter = 1, action) => {
@@ -26,6 +29,35 @@ const changeListReducer = (
 			return [...action.payload]
 		default: 
 			return list
+	}
+}
+
+
+const getItemsPhotoReducer = (items = [], action) => {
+	switch(action.type) {
+		case GET_ITEM_PHOTO:
+			return [...items, action.payload]
+		default: 
+			return items
+	}
+}
+
+const displayItemsPhotoReducer = (items = [], action) => {
+	switch(action.type) {
+		case DISPLAY_ITEMS_PHOTO:
+		const array=[];
+				return [ ...items ] = array.concat(action.payload)
+		default:
+			return items
+	}
+}
+
+const getItemsPhotoReducer2 = (items = [], action) => {
+	switch(action.type) {
+		case GET_ITEM_PHOTO2:
+			return [...items, action.payload]
+		default:
+			return items
 	}
 }
 
@@ -61,4 +93,7 @@ export {
 	contactReducer,
 	displayContactsReducer,
 	selectUserReducer,
+	getItemsPhotoReducer,
+	displayItemsPhotoReducer,
+	getItemsPhotoReducer2,
 }

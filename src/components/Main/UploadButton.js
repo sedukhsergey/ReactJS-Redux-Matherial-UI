@@ -4,15 +4,19 @@ import PropTypes from 'prop-types'
 
 const styles = theme => ({
 	button: {
-		margin: theme.spacing.unit,
+		margin: '10px auto',
 	},
 	uploadButton: {
-		margin: '10px 0',
 	}
 });
 
 const UploadButton = props => {
+	const handleClick = () => {
+		props.displayItemsPhotoDispatch(props.newPhotos)
+		props.getItemsPhotoNewDispatch()
+	}
 	const { classes } = props
+	console.log('UploadButton',props)
 	return (
 		<Grid
 			container
@@ -22,7 +26,7 @@ const UploadButton = props => {
 				variant="outlined"
 				color="secondary"
 				className={classes.button}
-				onClick={props.renderItems}>
+				onClick={handleClick}>
 				Load More
 			</Button>
 		</Grid>
@@ -31,7 +35,9 @@ const UploadButton = props => {
 
 UploadButton.propTypes = {
 	classes: PropTypes.object.isRequired,
-	renderItems: PropTypes.func.isRequired,
+	getItemsPhotoNewDispatch: PropTypes.func.isRequired,
+	displayItemsPhotoDispatch: PropTypes.func.isRequired,
+	newPhotos: PropTypes.array.isRequired,
 }
 
 export default withStyles(styles)(UploadButton)

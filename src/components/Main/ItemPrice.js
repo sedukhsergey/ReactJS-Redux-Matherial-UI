@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react'
-import { withStyles } from '@material-ui/core'
+import { NewPrice, OldPrice } from './'
 
-const styles = {
 
-}
-
-const ImagePrice = props => 
+const ItemPrice = props => 
 	<Fragment>
-		
+		<NewPrice />
+		<OldPrice />
 	</Fragment>
 
-	export default ImagePrice
+	export default ItemPrice

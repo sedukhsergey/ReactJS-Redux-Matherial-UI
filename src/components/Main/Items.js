@@ -14,7 +14,7 @@ const styles = theme => ({
 		minWidth: '270px',
 		maxWidth: '270px',
 		maxHeight: '425px',
-		margin: '30px 30px 30px 20px',
+		margin: '30px 0px 30px 48px',
 	},
 	gridRoot: {
 		marginBottom: '30px',
@@ -25,6 +25,7 @@ const styles = theme => ({
 
 const Items = props => {
 	const { classes } = props
+
 	return (
 		<Grid
 			container
@@ -33,20 +34,23 @@ const Items = props => {
 			alignItems="center"
 			item xs={12}
 			className={classes.gridRoot}>
-			{[0,1,2,3].map( (value, index ) => (
+			{props.itemsPhotoDisplay.map( (item, index ) => (
 				<Grid 
 					key={index}
 					className={classes.grid}
 					item xs={3}>
-						<ItemCard className={classes.paper}/>
+						<ItemCard 
+							className={classes.paper}
+							url={item}/>
 				</Grid>))}
 		</Grid>
 		)
 }
 	
 
-Items.propTypes = {
-	classes: PropTypes.object.isRequired,
+	Items.propTypes = {
+		classes: PropTypes.object.isRequired,
+		itemsPhotoDisplay: PropTypes.array.isRequired,
 }
 
 export default withStyles(styles)(Items)

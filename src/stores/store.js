@@ -1,4 +1,5 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
+import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import { 
 	selectUserReducer,
@@ -6,6 +7,9 @@ import {
 	changeListNumberReducer,
 	contactReducer,
 	displayContactsReducer,
+	getItemsPhotoReducer,
+	displayItemsPhotoReducer,
+	getItemsPhotoReducer2,
 } from '../reducers/'
 
 const store = createStore (
@@ -15,9 +19,12 @@ const store = createStore (
 		displayContacts: displayContactsReducer,
 		listNumber: changeListNumberReducer,
 		list: changeListReducer,
+		itemsPhoto: getItemsPhotoReducer,
+		itemsPhotoDisplay: displayItemsPhotoReducer,
+		newPhotos: getItemsPhotoReducer2,
 	}),
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-	applyMiddleware(thunk)
+	applyMiddleware(logger,thunk)
 	)
 
 export default store;

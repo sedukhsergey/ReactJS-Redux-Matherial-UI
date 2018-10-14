@@ -11,14 +11,26 @@ import {
 	changeNumberListAction,
 	changeListAction,
 	displayContactsAction,
-	getContacts
+	getContacts,
+	getItemsPhotoAction,
+	displayItemsPhotoAction,
+	getItemsPhotoAction2
 } from '../actions/'
 
 const App = props =>
 	<Fragment>
 		<Header/>
 		<Switch>
-			<Route exact path='/' component={Main}/>
+			<Route exact path='/' render={() => (
+				<Main 
+					getItemsPhotoDispatch={props.getItemsPhotoDispatch}
+					itemsPhoto={props.itemsPhoto}
+					itemsPhotoDisplay={props.itemsPhotoDisplay}
+					displayItemsPhotoDispatch={props.displayItemsPhotoDispatch}
+					newPhotos={props.newPhotos}
+					getItemsPhotoNewDispatch={props.getItemsPhotoNewDispatch}
+					/>
+				)}/>
 			<Route path='/exercices' render={() => (
 				<Exercices 
 					user={props.user}
@@ -26,7 +38,7 @@ const App = props =>
 					getContactsDispatch={props.getContactsDispatch}
 					contacts={props.contacts}
 					displayContacts={props.displayContacts}
-					displayContactsDispatch={props.displayContactsDispatch} />
+					displayContactsDispatch={props.displayContactsDispatch}/>
 				)}/>
 			<Route path='/event_list' render={() => (
 				<EventList 
@@ -47,6 +59,9 @@ const mapStateToProps = store => {
 		list: store.list,
 		contacts: store.contacts,
 		displayContacts: store.displayContacts,
+		itemsPhoto: store.itemsPhoto,
+		itemsPhotoDisplay: store.itemsPhotoDisplay,
+		newPhotos: store.newPhotos
 	}
 }
 
@@ -69,8 +84,20 @@ const mapDispatchToProps = dispatch => ({
 	displayContactsDispatch(contacts) {
 		const displayContacts = displayContactsAction(contacts)
 		dispatch(displayContacts)
-	}
+	},
+	getItemsPhotoDispatch() {
+		dispatch(getItemsPhotoAction())
+	},
+	getItemsPhotoNewDispatch() {
+		dispatch(getItemsPhotoAction2())
+	},
+	displayItemsPhotoDispatch(items) {
+	const displayItemsPhoto = 
+		displayItemsPhotoAction(items)
+		dispatch(displayItemsPhoto)
+},
 
 })
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

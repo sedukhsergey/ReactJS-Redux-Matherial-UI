@@ -7,7 +7,8 @@ import ItemContentHead from './ItemContentHead'
 import ItemContentBody from './ItemContentBody'
 import ItemDescription from './ItemDescription'
 import ItemPrice from './ItemPrice'
-
+import NewPrice from './NewPrice'
+import OldPrice from './OldPrice'
 export {
 	UploadButton,
 	Items,
@@ -18,4 +19,6 @@ export {
 	ItemContentBody,
 	ItemDescription,
 	ItemPrice,
+	NewPrice,
+	OldPrice,
 }

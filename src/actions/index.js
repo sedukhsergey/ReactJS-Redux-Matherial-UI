@@ -4,6 +4,9 @@ import {
 	CHANGE_LIST,
 	GET_CONTACTS,
 	DISPLAY_CONTACTS,
+	GET_ITEM_PHOTO,
+	DISPLAY_ITEMS_PHOTO,
+	GET_ITEM_PHOTO2,
 } from '../constants/'
 
 const changeListAction = payload => {
@@ -47,6 +50,41 @@ const getContacts = () => dispatch => {
 	});
 }
 
+const getItemsPhotoAction = () => dispatch => {
+	[1,2,3,4].forEach(() => {
+		fetch('https://picsum.photos/g/250/250/?random')
+		.then( result => {
+			const data = result.url
+				dispatch({
+					type: GET_ITEM_PHOTO,
+					payload: data
+				})
+		})
+	})
+}
+
+const getItemsPhotoAction2 = () => dispatch => {
+	[1,2,3,4].forEach(() => {
+		fetch('https://picsum.photos/g/250/250/?random')
+		.then( result => {
+			const data = result.url
+				dispatch({
+					type: GET_ITEM_PHOTO2,
+					payload: data
+				})
+		})
+	})
+}
+
+const displayItemsPhotoAction = payload => {
+	return {
+		type: DISPLAY_ITEMS_PHOTO,
+		payload
+	}
+}
+
+
+
 const selectUserAction = (payload) => {
 	return {
 		type: SELECT_USER,
@@ -59,5 +97,8 @@ export {
 	changeNumberListAction,
 	displayContactsAction,
 	getContacts,
+	getItemsPhotoAction,
 	selectUserAction,
+	displayItemsPhotoAction,
+	getItemsPhotoAction2,
 }
