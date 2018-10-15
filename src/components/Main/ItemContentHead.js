@@ -25,7 +25,6 @@ const ItemContentHead = props => {
 				className={classes.media}
 				image={props.url}
 				title="Contemplative Reptile"/>
-			<Avatar className={classes.saleAvatar}>Sale</Avatar>
 		</Fragment>
 		)
 }

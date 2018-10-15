@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import { UploadButton, Items } from './'
+import { UploadButton, Items, FooterDataList } from './'
 
 const styles = {
 	root: {
@@ -35,6 +35,7 @@ componentWillReceiveProps(nextProps) {
 					displayItemsPhotoDispatch={this.props.displayItemsPhotoDispatch}
 					newPhotos={this.props.newPhotos}
 					/>
+				<FooterDataList />
 			</div>
 			)
 	}

@@ -9,6 +9,8 @@ import ItemDescription from './ItemDescription'
 import ItemPrice from './ItemPrice'
 import NewPrice from './NewPrice'
 import OldPrice from './OldPrice'
+import FooterDataList from './FooterDataList'
+import DataList from './DataList'
 export {
 	UploadButton,
 	Items,
@@ -21,4 +23,6 @@ export {
 	ItemPrice,
 	NewPrice,
 	OldPrice,
+	FooterDataList,
+	DataList
 }
