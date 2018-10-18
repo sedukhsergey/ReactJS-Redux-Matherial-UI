@@ -5,7 +5,8 @@ const styles = {
 	dataList: {
 		padding: '20px',
 		lineHeight: '43px',
-		listStyle: 'none'
+		listStyle: 'none',
+		textAlign: 'center'
 	}
 }
 
